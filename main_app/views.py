@@ -1,8 +1,12 @@
 # main_app/views.py
 
 from django.shortcuts import render
-from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Cat
+
+class CatCreate(CreateView):
+    model = Cat
+    fields = '__all__'
 
 # Define the home view function
 def home(request):

@@ -6,8 +6,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('cats/', views.cat_index, name='cat-index'),
     path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
+    path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
 ]
-
 
 # register a path called conclusion, handled by views.conclusion
 # define the conclusion function in views.py and it must return 
