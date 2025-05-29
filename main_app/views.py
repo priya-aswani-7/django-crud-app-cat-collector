@@ -2,8 +2,12 @@
 
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 from .models import Cat
 from .forms import FeedingForm
+
+class Home(LoginView):
+    template_name='home.html'
 
 class CatCreate(CreateView):
     model = Cat
@@ -17,11 +21,6 @@ class CatUpdate(UpdateView):
 class CatDelete(DeleteView):
     model = Cat
     success_url = '/cats/'
-
-# Define the home view function
-def home(request):
-    # Send a simple HTML response
-    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
