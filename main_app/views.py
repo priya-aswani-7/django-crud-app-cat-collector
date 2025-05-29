@@ -40,7 +40,7 @@ def cat_detail(request, cat_id):
         'cat': cat, 'feeding_form': feeding_form
     })
 
-dpef add_feeding(request, cat_id):
+def add_feeding(request, cat_id):
     # create a ModelForm instance using the data in request.POST
     form = FeedingForm(request.POST)
     # validate the form
